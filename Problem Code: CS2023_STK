@@ -1,0 +1,57 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    int x;
+    int c=0,d=0;
+    int max2,max1;
+    while(t--){
+        cin>>x;
+        int a,b;
+       
+
+         c=0;
+        max2=0;
+        for(int i=0;i<x;i++){
+            cin>>a;
+            if(a!=0){
+                c++;
+            }
+            else{
+            
+                max2=max(c,max2);
+                c=0;
+            }
+        }
+        max2=max(c,max2);
+        d=0;
+        max1=0;
+        for(int i=0;i<x;i++){
+            cin>>b;
+            if(b!=0){
+                d++;
+            }
+            else{
+            
+                max1=max(d,max1);
+                d=0;
+            }
+        }
+        max1=max(d,max1);
+        if(max2>max1){
+            cout<<"Om\n";
+        }
+        else if (max2<max1){
+            cout<<"Addy\n";
+        }
+        else{
+            cout<<"Draw\n";
+        }
+        
+    }
+	// your code goes here
+	return 0;
+}
